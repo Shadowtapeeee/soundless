@@ -3,20 +3,21 @@
   "date": "2026-11-24",
   "server": "",
   "notes": [
-    "Первая бета Soundless: ядро на Rust (Tauri 2) для Windows и Android",
-    "Бесшовное воспроизведение и кроссфейд",
-    "Караоке-тексты по словам с настройками, переводом и поиском клипа",
-    "Liquid Glass, темы, акценты и свои шрифты",
-    "Профили, друзья, совместимость вкусов, вход через Telegram"
+    "Новый дизайн: AMOLED-оформление, боковое меню на ПК, нижнее меню на телефоне",
+    "Прогресс-бар в виде волны трека",
+    "Вход через Google и защита от ботов при входе и регистрации",
+    "Поиск по нескольким каталогам, «Моя волна» по любимым артистам, умная очередь",
+    "Комнаты совместного прослушивания, офлайн-загрузки, статистика и достижения",
+    "Подписка Soundless Aura"
   ],
   "windows": {
-    "url": "https://github.com/Shadowtapeeee/soundless/raw/main/releases/Soundless_0.1.0-beta_x64-setup.exe",
-    "size": 4633178,
-    "sha256": "82a3e82eeec59035954e0cc65696375dcfbf186cae4326f629cc4b7006cf81f3"
+    "url": "https://github.com/Shadowtapeeee/soundless/releases/download/v0.1.0-beta/Soundless_0.1.0-beta_x64-setup.exe",
+    "size": 5022357,
+    "sha256": "9775dea1cbd173d85617791e9bd31abe016906a9b2578ac55ec265690ff5c212"
   },
   "android": {
-    "url": "https://github.com/Shadowtapeeee/soundless/raw/main/releases/Soundless-0.1.0-beta.apk",
-    "size": 13763516,
-    "sha256": "aa2260d65945e37de1e897106a44969bce73e81a1aec977c06ca29428aae8f80"
+    "url": "https://github.com/Shadowtapeeee/soundless/releases/download/v0.1.0-beta/Soundless-0.1.0-beta.apk",
+    "size": 16527244,
+    "sha256": "911934c6762914c48a2df3a4a3ec03bca31ec17e9e685e3b189a9019c7d946c5"
   }
 }
