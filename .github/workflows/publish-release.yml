@@ -1,0 +1,37 @@
+# Публикует установщики из папки .release-assets в GitHub Releases как вложения.
+# Срабатывает, когда в репозиторий приходят новые файлы сборки; исходный код в репозиторий не попадает.
+name: Publish release
+
+on:
+  push:
+    paths:
+      - '.release-assets/**'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Create or update the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          dir=.release-assets
+          if [ ! -f "$dir/release.json" ]; then echo "Нечего публиковать"; exit 0; fi
+          tag=$(jq -r .tag "$dir/release.json")
+          title=$(jq -r .title "$dir/release.json")
+          jq -r '.notes[] | "- " + .' "$dir/release.json" > notes.md
+          prerelease=$(jq -r 'if .prerelease then "--prerelease" else "" end' "$dir/release.json")
+          files=$(find "$dir" -maxdepth 1 -type f \( -name '*.exe' -o -name '*.apk' -o -name '*.sha256' \) | sort)
+          if [ -z "$files" ]; then echo "Нет файлов сборки"; exit 0; fi
+          (cd "$dir" && sha256sum $(basename -a $files | grep -v '\.sha256$')) > SHA256SUMS.txt
+          if gh release view "$tag" >/dev/null 2>&1; then
+            gh release edit "$tag" --title "$title" --notes-file notes.md $prerelease
+            gh release upload "$tag" $files SHA256SUMS.txt --clobber
+          else
+            gh release create "$tag" $files SHA256SUMS.txt --target "$GITHUB_SHA" --title "$title" --notes-file notes.md $prerelease
+          fi
