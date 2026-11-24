@@ -1,0 +1,22 @@
+{
+  "version": "0.1.0-beta",
+  "date": "2026-11-24",
+  "server": "",
+  "notes": [
+    "Первая бета Soundless: ядро на Rust (Tauri 2) для Windows и Android",
+    "Бесшовное воспроизведение и кроссфейд",
+    "Караоке-тексты по словам с настройками, переводом и поиском клипа",
+    "Liquid Glass, темы, акценты и свои шрифты",
+    "Профили, друзья, совместимость вкусов, вход через Telegram"
+  ],
+  "windows": {
+    "url": "https://github.com/Shadowtapeeee/soundless/raw/main/releases/Soundless_0.1.0-beta_x64-setup.exe",
+    "size": 4633178,
+    "sha256": "82a3e82eeec59035954e0cc65696375dcfbf186cae4326f629cc4b7006cf81f3"
+  },
+  "android": {
+    "url": "https://github.com/Shadowtapeeee/soundless/raw/main/releases/Soundless-0.1.0-beta.apk",
+    "size": 13763516,
+    "sha256": "aa2260d65945e37de1e897106a44969bce73e81a1aec977c06ca29428aae8f80"
+  }
+}
