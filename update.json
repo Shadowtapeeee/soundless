@@ -1,7 +1,7 @@
 {
   "version": "0.1.0-beta",
   "date": "2026-11-24",
-  "server": "",
+  "server": "https://expensivebayeveryday.bothost.tech/",
   "notes": [
     "Новый дизайн: AMOLED-оформление, боковое меню на ПК, нижнее меню на телефоне",
     "Прогресс-бар в виде волны трека",
